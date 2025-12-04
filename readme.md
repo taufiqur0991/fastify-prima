@@ -1,6 +1,6 @@
 # Fastify + Prisma + Websocket + JWT Authentication (MVC Structure)
 
-Project ini adalah boilerplate siap pakai menggunakan **Fastify**, **Prisma ORM **, **JWT Authentication**, **Websocket**, dan struktur **MVC modular**.
+Project ini adalah boilerplate siap pakai menggunakan **Fastify**, **Prisma ORM**, **JWT Authentication**, **Websocket**, dan struktur **MVC modular**.
 
 Cocok untuk membuat API modern, scalable, dan mudah di-maintain.
 
