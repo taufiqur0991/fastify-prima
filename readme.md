@@ -31,11 +31,6 @@ cd project
 npm install
 ```
 
-### 3. Prisma Init (jika belum ada)
-```
-npx prisma init
-```
-
 ---
 
 # ⚙️ Konfigurasi Environment
@@ -61,14 +56,10 @@ JWT_SECRET="rahasia_jwt_apa_saja"
 npx prisma migrate dev --name init
 ```
 
----
-
 ### Generate Prisma Client:
 ```
 npx prisma generate
 ```
-
----
 
 ### Db Seed Prisma:
 ```
