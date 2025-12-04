@@ -8,7 +8,7 @@
     "dev": "node src/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "taufiqur0991",
   "license": "MIT",
   "type": "module",
   "dependencies": {

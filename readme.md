@@ -50,15 +50,14 @@ JWT_SECRET="rahasia_jwt_apa_saja"
 > Sesuaikan username, password, dan nama database.
 
 ---
+### Generate Prisma Client:
+```
+npx prisma generate
+```
 
 ### Jalankan migrasi:
 ```
 npx prisma migrate dev --name init
-```
-
-### Generate Prisma Client:
-```
-npx prisma generate
 ```
 
 ### Db Seed Prisma:
