@@ -1,6 +1,6 @@
 # Fastify + Prisma + JWT Authentication (MVC Structure)
 
-Project ini adalah boilerplate siap pakai menggunakan **Fastify**, **Prisma ORM**, **JWT Authentication**, dan struktur **MVC modular**.
+Project ini adalah boilerplate siap pakai menggunakan **Fastify**, **Prisma ORM (MariaDB/MySQL)**, **JWT Authentication**, dan struktur **MVC modular**.
 
 Cocok untuk membuat API modern, scalable, dan mudah di-maintain.
 
