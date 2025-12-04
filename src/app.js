@@ -8,12 +8,12 @@ import jwtPlugin from "./plugins/jwt.js";
 import authRoute from "./modules/auth/auth.route.js";
 import userRoute from "./modules/user/user.route.js";
 
-export function buildApp() {
-  const app = Fastify();
+export async function buildApp() {
+  const app = Fastify({ logger: true });
 
   // plugins
-  app.register(prismaPlugin);
-  app.register(jwtPlugin);
+  await app.register(prismaPlugin);
+  await app.register(jwtPlugin);
 
   // routes
   app.register(authRoute, { prefix: "/auth" });

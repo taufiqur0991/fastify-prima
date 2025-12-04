@@ -17,41 +17,6 @@ Cocok untuk membuat API modern, scalable, dan mudah di-maintain.
 
 ---
 
-# 📁 Struktur Folder
-```
-project/
-│
-├── prisma/
-│   └── schema.prisma
-│
-├── src/
-│   ├── plugins/
-│   │   ├── prisma.js
-│   │   └── jwt.js
-│   │
-│   ├── modules/
-│   │   └── auth/
-│   │       ├── auth.controller.js
-│   │       ├── auth.service.js
-│   │       └── auth.route.js
-│   │
-│   ├── modules/
-│   │   └── user/
-│   │       ├── user.controller.js
-│   │       ├── user.service.js
-│   │       └── user.route.js
-│   │
-│   ├── utils/
-│   │   └── hash.js
-│   │
-│   ├── app.js
-│   └── server.js
-│
-├── .env
-└── package.json
-```
-
----
 
 # 🛠 Instalasi
 
@@ -78,39 +43,36 @@ npx prisma init
 Buat file `.env`:
 
 ```
-DATABASE_URL="mysql://root:@localhost:3306/myapp"
-JWT_SECRET="supersecretjwt"
+DATABASE_URL="mysql://root:@localhost:3306/test"
+DATABASE_HOST="localhost"
+DATABASE_PORT="3306"
+DATABASE_USER="root"
+DATABASE_PASSWORD=""
+DATABASE_NAME="test"
+JWT_SECRET="rahasia_jwt_apa_saja"
 ```
 
 > Sesuaikan username, password, dan nama database.
 
 ---
 
-# 🗄 Prisma Schema (prisma/schema.prisma)
-Model default:
-
-```prisma
-datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
-}
-
-generator client {
-  provider = "prisma-client-js"
-}
-
-model User {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
-}
-```
-
 ### Jalankan migrasi:
 ```
 npx prisma migrate dev --name init
+```
+
+---
+
+### Generate Prisma Client:
+```
+npx prisma generate
+```
+
+---
+
+### Db Seed Prisma:
+```
+npx prisma db seed
 ```
 
 ---
@@ -156,8 +118,8 @@ Response:
 Body:
 ```json
 {
-  "email": "email@test.com",
-  "password": "123456"
+  "email": "admin@local.com",
+  "password": "password"
 }
 ```
 Response:
@@ -166,8 +128,8 @@ Response:
   "token": "<JWT_TOKEN>",
   "user": {
     "id": 1,
-    "name": "kerokero",
-    "email": "email@test.com"
+    "name": "Administrator",
+    "email": "admin@local.com"
   }
 }
 ```
@@ -184,8 +146,8 @@ Response:
 ```json
 {
   "id": 1,
-  "name": "kerokero",
-  "email": "email@test.com",
+  "name": "Administrator",
+  "email": "admin@local.com",
   "createdAt": "2025-01-01T00:00:00.000Z"
 }
 ```
